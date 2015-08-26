@@ -1,0 +1,932 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.10.1.40194/W32 for 8051         18/Aug/2015  14:37:12 #
+# Copyright 2004-2011 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#    Source file        =  C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\Source\LED.C            #
+#    Command line       =  -f C:\Users\Administrator\Desktop\彩灯\源程序\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wCoord.cfg (-DCPU32MHZ              #
+#                          -DROOT=__near_func -DMAC_CFG_APP_PENDING_QUEUE=TRU #
+#                          E -DMAC_CFG_TX_DATA_MAX=5 -DMAC_CFG_TX_MAX=8       #
+#                          -DMAC_CFG_RX_MAX=5 -DZDO_COORDINATOR -DRTR_NWK)    #
+#                          -f C:\Users\Administrator\Desktop\彩灯\源程序\Proj #
+#                          ects\zstack\Samples\SampleApp\CC2530DB\..\..\..\To #
+#                          ols\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO            #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFF00                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 C:\Users\Administrator\Desk #
+#                          top\彩灯\源程序\Projects\zstack\Samples\SampleApp\ #
+#                          Source\LED.C -D ZTOOL_P1 -D xMT_TASK -D            #
+#                          xMT_SYS_FUNC -D xMT_ZDO_FUNC -D                    #
+#                          LCD_SUPPORTED=DEBUG -lC C:\Users\Administrator\Des #
+#                          ktop\彩灯\源程序\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\CoordinatorEB\List\ -lA                  #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\ #
+#                          List\ --diag_suppress Pe001,Pa010 -o               #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\ #
+#                          Obj\ -e --no_code_motion --debug --core=plain      #
+#                          --dptr=16,1 --data_model=large                     #
+#                          --code_model=banked --calling_convention=xdata_ree #
+#                          ntrant --place_constants=data_rom                  #
+#                          --nr_virtual_regs 16 -I C:\Users\Administrator\Des #
+#                          ktop\彩灯\源程序\Projects\zstack\Samples\SampleApp #
+#                          \CC2530DB\ -I C:\Users\Administrator\Desktop\彩灯\ #
+#                          源程序\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\Source\ -I C:\Users\Administrator\Desktop\彩灯\ #
+#                          源程序\Projects\zstack\Samples\SampleApp\CC2530DB\ #
+#                          ..\..\..\ZMain\TI2530DB\ -I                        #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\hal\include\ -I                        #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\hal\target\CC2530EB\ -I                #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\mac\include\ -I                        #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\mac\high_level\ -I                     #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\mac\low_level\srf04\ -I                #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\mac\low_level\srf04\single_chip\ -I    #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\mt\ -I C:\Users\Administrator\Desktop\ #
+#                          彩灯\源程序\Projects\zstack\Samples\SampleApp\CC25 #
+#                          30DB\..\..\..\..\..\Components\osal\include\ -I    #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\services\saddr\ -I                     #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\services\sdata\ -I                     #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\af\ -I                           #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\nwk\ -I                          #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\sapi\ -I                         #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\sec\ -I                          #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\sys\ -I                          #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\stack\zdo\ -I                          #
+#                          C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\.. #
+#                          \Components\zmac\ -I C:\Users\Administrator\Deskto #
+#                          p\彩灯\源程序\Projects\zstack\Samples\SampleApp\CC #
+#                          2530DB\..\..\..\..\..\Components\zmac\f8w\ -Ohz    #
+#                          --require_prototypes                               #
+#    List file          =  C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\ #
+#                          List\LED.lst                                       #
+#    Object file        =  C:\Users\Administrator\Desktop\彩灯\源程序\Project #
+#                          s\zstack\Samples\SampleApp\CC2530DB\CoordinatorEB\ #
+#                          Obj\LED.r51                                        #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+C:\Users\Administrator\Desktop\彩灯\源程序\Projects\zstack\Samples\SampleApp\Source\LED.C
+      1          #include "LED.h" 
+
+   \                                 In  segment SFR_AN, at 0x80
+   \   union <unnamed> volatile __sfr _A_P0
+   \                     _A_P0:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0x8f
+   \   unsigned char volatile __sfr P0INP
+   \                     P0INP:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          
+      3          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      4          void IO_Init(void)
+   \                     IO_Init:
+      5          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      6            P0DIR |= 0x02;     //P1_0定义为输出
+   \   000000   43FD02       ORL     0xfd,#0x2
+      7            P0INP |= 0X02;     //打开下拉
+   \   000003   438F02       ORL     0x8f,#0x2
+      8          }
+   \   000006   02....       LJMP    ?BRET
+   \   000009                REQUIRE P0DIR
+   \   000009                REQUIRE P0INP
+      9          
+     10          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     11          void delay()
+   \                     delay:
+     12          {int i;
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     13            for(i=0;i<50;i++);
+     14          }
+   \   000000   02....       LJMP    ?BRET
+     15          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     16          void T0()
+   \                     T0:
+     17          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     18            LED1 = 1;
+   \   000000   D281         SETB    0x80.1
+     19            __no_operation();
+   \   000002                REQUIRE ?Subroutine0
+   \   000002                REQUIRE _A_P0
+   \   000002                ; // Fall through to label ?Subroutine0
+     20            __no_operation();   
+     21            LED1 = 0;
+     22          }
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine0:
+   \   000000   00           NOP
+   \   000001   00           NOP
+   \   000002   C281         CLR     0x80.1
+   \   000004   02....       LJMP    ?BRET
+     23          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     24          void T1()
+   \                     T1:
+     25          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     26            LED1 = 1;  
+   \   000000   D281         SETB    0x80.1
+     27            __no_operation();
+   \   000002   00           NOP
+     28            __no_operation();
+   \   000003   00           NOP
+     29            __no_operation();
+   \   000004   00           NOP
+     30            __no_operation();
+   \   000005   00           NOP
+     31            __no_operation();
+   \   000006   00           NOP
+     32            __no_operation();
+   \   000007   00           NOP
+     33            __no_operation();
+   \   000008   00           NOP
+     34            __no_operation();
+   \   000009   00           NOP
+     35            __no_operation();
+   \   00000A   00           NOP
+     36            __no_operation();
+   \   00000B   80..         SJMP    ?Subroutine0
+   \   00000D                REQUIRE _A_P0
+     37            __no_operation();
+     38            LED1 = 0;
+     39          }
+     40          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     41          void REST()
+   \                     REST:
+     42          {
+   \   000000   C082         PUSH    DPL
+   \   000002   C083         PUSH    DPH
+   \   000004                ; Saved register size: 2
+   \   000004                ; Auto size: 0
+     43            LED1 = 0;
+   \   000004   C281         CLR     0x80.1
+     44            delay();
+   \   000006                ; Setup parameters for call to function delay
+   \   000006   12....       LCALL   ??delay?relay
+     45          }
+   \   000009   D083         POP     DPH
+   \   00000B   D082         POP     DPL
+   \   00000D   02....       LJMP    ?BRET
+   \   000010                REQUIRE _A_P0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     46          void Sendcolor(unsigned int r,unsigned int g,unsigned int b)
+   \                     Sendcolor:
+     47          {   IO_Init();
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 48
+   \   000005   74D0         MOV     A,#-0x30
+   \   000007   12....       LCALL   ?ALLOC_XSTACK8
+   \   00000A   EA           MOV     A,R2
+   \   00000B   FE           MOV     R6,A
+   \   00000C   EB           MOV     A,R3
+   \   00000D   FF           MOV     R7,A
+   \   00000E   8C..         MOV     ?V0 + 2,R4
+   \   000010   8D..         MOV     ?V0 + 3,R5
+   \   000012   743E         MOV     A,#0x3e
+   \   000014   12....       LCALL   ?XSTACK_DISP0_8
+   \   000017   E0           MOVX    A,@DPTR
+   \   000018   F5..         MOV     ?V0 + 0,A
+   \   00001A   A3           INC     DPTR
+   \   00001B   E0           MOVX    A,@DPTR
+   \   00001C   F5..         MOV     ?V0 + 1,A
+   \   00001E                ; Setup parameters for call to function IO_Init
+   \   00001E   12....       LCALL   ??IO_Init?relay
+     48            unsigned int a[24]={0},p=0,j=0,k=0,n;
+   \   000021   90....       MOV     DPTR,#`?<Constant {0}>`
+   \   000024   C082         PUSH    DPL
+   \   000026   85..82       MOV     DPL,?XSP + 0
+   \   000029   85..83       MOV     DPH,?XSP + 1
+   \   00002C   AC82         MOV     R4,DPL
+   \   00002E   AD83         MOV     R5,DPH
+   \   000030   7583..       MOV     DPH,#(`?<Constant {0}>` >> 8) & 0xff
+   \   000033   D082         POP     DPL
+   \   000035   7430         MOV     A,#0x30
+   \   000037   12....       LCALL   ?MOVE_LONG8_XDATA_XDATA
+     49            
+     50              
+     51                 for(p=0;p<8;p++){
+   \   00003A   FA           MOV     R2,A
+   \   00003B   FB           MOV     R3,A
+     52                a[p]=((g<<p)&0x80);
+   \                     ??Sendcolor_0:
+   \   00003C   85....       MOV     ?V0 + 4,?V0 + 2
+   \   00003F   85....       MOV     ?V0 + 5,?V0 + 3
+   \   000042   EA           MOV     A,R2
+   \   000043   78..         MOV     R0,#?V0 + 4
+   \   000045   12....       LCALL   ?S_SHL
+   \   000048   E5..         MOV     A,?V0 + 4
+   \   00004A   12....       LCALL   ?Subroutine7 & 0xFFFF
+     53                
+     54                 }
+   \                     ??CrossCallReturnLabel_8:
+   \   00004D   F582         MOV     DPL,A
+   \   00004F   E583         MOV     A,DPH
+   \   000051   39           ADDC    A,R1
+   \   000052   12....       LCALL   ??Subroutine9_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_14:
+   \   000055   40E5         JC      ??Sendcolor_0
+     55                 for(j=0;j<8;j++){
+   \   000057   7A00         MOV     R2,#0x0
+   \   000059   7B00         MOV     R3,#0x0
+     56                a[j+8]=((r<<j)&0x80);
+   \                     ??Sendcolor_1:
+   \   00005B   8E..         MOV     ?V0 + 2,R6
+   \   00005D   8F..         MOV     ?V0 + 3,R7
+   \   00005F   EA           MOV     A,R2
+   \   000060   78..         MOV     R0,#?V0 + 2
+   \   000062   12....       LCALL   ?S_SHL
+   \   000065   12....       LCALL   ?Subroutine4 & 0xFFFF
+     57                
+     58                 }
+   \                     ??CrossCallReturnLabel_4:
+   \   000068   2410         ADD     A,#0x10
+   \   00006A   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_12:
+   \   00006D   40EC         JC      ??Sendcolor_1
+     59                 for(k=0;k<8;k++){
+   \   00006F   7A00         MOV     R2,#0x0
+   \   000071   7B00         MOV     R3,#0x0
+     60                a[k+16]=((b<<k)&0x80);
+   \                     ??Sendcolor_2:
+   \   000073   85....       MOV     ?V0 + 2,?V0 + 0
+   \   000076   85....       MOV     ?V0 + 3,?V0 + 1
+   \   000079   EA           MOV     A,R2
+   \   00007A   78..         MOV     R0,#?V0 + 2
+   \   00007C   12....       LCALL   ?S_SHL
+   \   00007F   12....       LCALL   ?Subroutine4 & 0xFFFF
+     61                
+     62                 }
+   \                     ??CrossCallReturnLabel_5:
+   \   000082   2420         ADD     A,#0x20
+   \   000084   12....       LCALL   ?Subroutine3 & 0xFFFF
+   \                     ??CrossCallReturnLabel_13:
+   \   000087   40EA         JC      ??Sendcolor_2
+     63                 for(n=0;n<24;n++)
+   \   000089   7E00         MOV     R6,#0x0
+   \   00008B   7F00         MOV     R7,#0x0
+     64                 {
+     65                  if(a[n]==0) T0();
+   \                     ??Sendcolor_3:
+   \   00008D   EE           MOV     A,R6
+   \   00008E   F8           MOV     R0,A
+   \   00008F   EF           MOV     A,R7
+   \   000090   F9           MOV     R1,A
+   \   000091   E8           MOV     A,R0
+   \   000092   C3           CLR     C
+   \   000093   33           RLC     A
+   \   000094   F8           MOV     R0,A
+   \   000095   E9           MOV     A,R1
+   \   000096   33           RLC     A
+   \   000097   F9           MOV     R1,A
+   \   000098   85..82       MOV     DPL,?XSP + 0
+   \   00009B   85..83       MOV     DPH,?XSP + 1
+   \   00009E   E582         MOV     A,DPL
+   \   0000A0   28           ADD     A,R0
+   \   0000A1   F582         MOV     DPL,A
+   \   0000A3   E583         MOV     A,DPH
+   \   0000A5   39           ADDC    A,R1
+   \   0000A6   F583         MOV     DPH,A
+   \   0000A8   E0           MOVX    A,@DPTR
+   \   0000A9   F8           MOV     R0,A
+   \   0000AA   A3           INC     DPTR
+   \   0000AB   E0           MOVX    A,@DPTR
+   \   0000AC   F9           MOV     R1,A
+   \   0000AD   E8           MOV     A,R0
+   \   0000AE   49           ORL     A,R1
+   \   0000AF   7005         JNZ     ??Sendcolor_4
+   \   0000B1                ; Setup parameters for call to function T0
+   \   0000B1   12....       LCALL   ??T0?relay
+   \   0000B4   8003         SJMP    ??Sendcolor_5
+     66                  else T1();
+   \                     ??Sendcolor_4:
+   \   0000B6                ; Setup parameters for call to function T1
+   \   0000B6   12....       LCALL   ??T1?relay
+     67          
+     68                 }
+   \                     ??Sendcolor_5:
+   \   0000B9   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_10:
+   \   0000BC   9418         SUBB    A,#0x18
+   \   0000BE   EF           MOV     A,R7
+   \   0000BF   9400         SUBB    A,#0x0
+   \   0000C1   40CA         JC      ??Sendcolor_3
+     69            LED1 = 1;
+   \   0000C3   D281         SETB    0x80.1
+     70            REST();
+   \   0000C5                ; Setup parameters for call to function REST
+   \   0000C5   12....       LCALL   ??REST?relay
+     71          
+     72          }
+   \   0000C8   7430         MOV     A,#0x30
+   \   0000CA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000CD                REQUIRE ?Subroutine1
+   \   0000CD                REQUIRE _A_P0
+   \   0000CD                ; // Fall through to label ?Subroutine1
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine1:
+   \   000000   7F06         MOV     R7,#0x6
+   \   000002   02....       LJMP    ?BANKED_LEAVE_XDATA
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine4:
+   \   000000   E5..         MOV     A,?V0 + 2
+   \   000002   12....       LCALL   ?Subroutine7 & 0xFFFF
+   \                     ??CrossCallReturnLabel_9:
+   \   000005   F8           MOV     R0,A
+   \   000006   E583         MOV     A,DPH
+   \   000008   39           ADDC    A,R1
+   \   000009   F9           MOV     R1,A
+   \   00000A   E8           MOV     A,R0
+   \   00000B   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine7:
+   \   000000   5480         ANL     A,#0x80
+   \   000002   FC           MOV     R4,A
+   \   000003   EA           MOV     A,R2
+   \   000004   F8           MOV     R0,A
+   \   000005   EB           MOV     A,R3
+   \   000006   F9           MOV     R1,A
+   \   000007   E8           MOV     A,R0
+   \   000008   C3           CLR     C
+   \   000009   33           RLC     A
+   \   00000A   F8           MOV     R0,A
+   \   00000B   E9           MOV     A,R1
+   \   00000C   33           RLC     A
+   \   00000D   F9           MOV     R1,A
+   \   00000E   85..82       MOV     DPL,?XSP + 0
+   \   000011   85..83       MOV     DPH,?XSP + 1
+   \   000014   E582         MOV     A,DPL
+   \   000016   28           ADD     A,R0
+   \   000017   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine3:
+   \   000000   F582         MOV     DPL,A
+   \   000002   E9           MOV     A,R1
+   \   000003   3400         ADDC    A,#0x0
+   \   000005                REQUIRE ??Subroutine9_0
+   \   000005                ; // Fall through to label ??Subroutine9_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine9_0:
+   \   000000   F583         MOV     DPH,A
+   \   000002   EC           MOV     A,R4
+   \   000003   F0           MOVX    @DPTR,A
+   \   000004   A3           INC     DPTR
+   \   000005   E4           CLR     A
+   \   000006   F0           MOVX    @DPTR,A
+   \   000007   EA           MOV     A,R2
+   \   000008   2401         ADD     A,#0x1
+   \   00000A   0A           INC     R2
+   \   00000B   EB           MOV     A,R3
+   \   00000C   3400         ADDC    A,#0x0
+   \   00000E   FB           MOV     R3,A
+   \   00000F   C3           CLR     C
+   \   000010   EA           MOV     A,R2
+   \   000011   9408         SUBB    A,#0x8
+   \   000013   EB           MOV     A,R3
+   \   000014   9400         SUBB    A,#0x0
+   \   000016   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine8:
+   \   000000   EE           MOV     A,R6
+   \   000001   2401         ADD     A,#0x1
+   \   000003   0E           INC     R6
+   \   000004   EF           MOV     A,R7
+   \   000005   3400         ADDC    A,#0x0
+   \   000007   FF           MOV     R7,A
+   \   000008   C3           CLR     C
+   \   000009   EE           MOV     A,R6
+   \   00000A   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     73          void Dela_200ms()
+   \                     Dela_200ms:
+     74          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+     75          int i,j;
+     76               for(i=0;i<20;i++)
+     77               {
+     78               for(j=0;j<17740;j++);
+     79               }
+     80          }
+   \   000000   02....       LJMP    ?BRET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+     81          void Twinkle()
+   \                     Twinkle:
+     82          {
+   \   000000   74F2         MOV     A,#-0xe
+   \   000002   12....       LCALL   ?BANKED_ENTER_XDATA
+   \   000005                ; Saved register size: 14
+   \   000005                ; Auto size: 0
+     83           int j=100,i=0,k=0,a=0;
+   \   000005   75..64       MOV     ?V0 + 0,#0x64
+   \   000008   75..00       MOV     ?V0 + 1,#0x0
+     84              while(j--){
+   \                     ??Twinkle_0:
+   \   00000B   A8..         MOV     R0,?V0 + 0
+   \   00000D   A9..         MOV     R1,?V0 + 1
+   \   00000F   E8           MOV     A,R0
+   \   000010   24FF         ADD     A,#-0x1
+   \   000012   F5..         MOV     ?V0 + 0,A
+   \   000014   E9           MOV     A,R1
+   \   000015   34FF         ADDC    A,#-0x1
+   \   000017   F5..         MOV     ?V0 + 1,A
+   \   000019   E8           MOV     A,R0
+   \   00001A   49           ORL     A,R1
+   \   00001B   7003         JNZ     $+5
+   \   00001D   02....       LJMP    ??Twinkle_1 & 0xFFFF
+     85              for(i=0;i<25;i++) {Sendcolor(i*10,255-i*10,255);Dela_200ms();}
+   \   000020   75..00       MOV     ?V0 + 2,#0x0
+   \   000023   75..00       MOV     ?V0 + 3,#0x0
+   \                     ??Twinkle_2:
+   \   000026   E5..         MOV     A,?V0 + 2
+   \   000028   75F00A       MOV     B,#0xa
+   \   00002B   A4           MUL     AB
+   \   00002C   FA           MOV     R2,A
+   \   00002D   A8F0         MOV     R0,B
+   \   00002F   75F00A       MOV     B,#0xa
+   \   000032   E5..         MOV     A,?V0 + 3
+   \   000034   A4           MUL     AB
+   \   000035   28           ADD     A,R0
+   \   000036   FB           MOV     R3,A
+   \   000037                ; Setup parameters for call to function Sendcolor
+   \   000037   75..FF       MOV     ?V0 + 4,#-0x1
+   \   00003A   75..00       MOV     ?V0 + 5,#0x0
+   \   00003D   78..         MOV     R0,#?V0 + 4
+   \   00003F   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000042   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_15:
+   \   000045   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000048                ; Setup parameters for call to function Dela_200ms
+   \   000048   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_6:
+   \   00004B   40D9         JC      ??Twinkle_2
+     86              for(k=0;k<25;k++) {Sendcolor(255,k*10,i*10-k*10);Dela_200ms();}
+   \   00004D   7E00         MOV     R6,#0x0
+   \   00004F   7F00         MOV     R7,#0x0
+   \                     ??Twinkle_3:
+   \   000051                ; Setup parameters for call to function Sendcolor
+   \   000051   E5..         MOV     A,?V0 + 2
+   \   000053   C3           CLR     C
+   \   000054   9E           SUBB    A,R6
+   \   000055   F5..         MOV     ?V0 + 4,A
+   \   000057   E5..         MOV     A,?V0 + 3
+   \   000059   9F           SUBB    A,R7
+   \   00005A   F5..         MOV     ?V0 + 5,A
+   \   00005C   E5..         MOV     A,?V0 + 4
+   \   00005E   75F00A       MOV     B,#0xa
+   \   000061   A4           MUL     AB
+   \   000062   F5..         MOV     ?V0 + 4,A
+   \   000064   A8F0         MOV     R0,B
+   \   000066   75F00A       MOV     B,#0xa
+   \   000069   E5..         MOV     A,?V0 + 5
+   \   00006B   A4           MUL     AB
+   \   00006C   28           ADD     A,R0
+   \   00006D   F5..         MOV     ?V0 + 5,A
+   \   00006F   78..         MOV     R0,#?V0 + 4
+   \   000071   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000074   EE           MOV     A,R6
+   \   000075   FC           MOV     R4,A
+   \   000076   EF           MOV     A,R7
+   \   000077   FD           MOV     R5,A
+   \   000078   EC           MOV     A,R4
+   \   000079   75F00A       MOV     B,#0xa
+   \   00007C   A4           MUL     AB
+   \   00007D   FC           MOV     R4,A
+   \   00007E   A8F0         MOV     R0,B
+   \   000080   75F00A       MOV     B,#0xa
+   \   000083   ED           MOV     A,R5
+   \   000084   A4           MUL     AB
+   \   000085   28           ADD     A,R0
+   \   000086   FD           MOV     R5,A
+   \   000087   7AFF         MOV     R2,#-0x1
+   \   000089   7B00         MOV     R3,#0x0
+   \   00008B   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_17:
+   \   00008E   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000091                ; Setup parameters for call to function Dela_200ms
+   \   000091   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_0:
+   \   000094   40BB         JC      ??Twinkle_3
+     87              for(a=0;a<25;a++) {Sendcolor(255-a*10,255,a*10);Dela_200ms();}
+   \   000096   75..00       MOV     ?V0 + 2,#0x0
+   \   000099   75..00       MOV     ?V0 + 3,#0x0
+   \                     ??Twinkle_4:
+   \   00009C   85....       MOV     ?V0 + 4,?V0 + 2
+   \   00009F   85....       MOV     ?V0 + 5,?V0 + 3
+   \   0000A2   E5..         MOV     A,?V0 + 4
+   \   0000A4   75F00A       MOV     B,#0xa
+   \   0000A7   A4           MUL     AB
+   \   0000A8   F5..         MOV     ?V0 + 4,A
+   \   0000AA   A8F0         MOV     R0,B
+   \   0000AC   75F00A       MOV     B,#0xa
+   \   0000AF   E5..         MOV     A,?V0 + 5
+   \   0000B1   A4           MUL     AB
+   \   0000B2   28           ADD     A,R0
+   \   0000B3   F5..         MOV     ?V0 + 5,A
+   \   0000B5                ; Setup parameters for call to function Sendcolor
+   \   0000B5   78..         MOV     R0,#?V0 + 4
+   \   0000B7   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000BA   7CFF         MOV     R4,#-0x1
+   \   0000BC   7D00         MOV     R5,#0x0
+   \   0000BE   EC           MOV     A,R4
+   \   0000BF   C3           CLR     C
+   \   0000C0   95..         SUBB    A,?V0 + 4
+   \   0000C2   FA           MOV     R2,A
+   \   0000C3   E4           CLR     A
+   \   0000C4   95..         SUBB    A,?V0 + 5
+   \   0000C6   FB           MOV     R3,A
+   \   0000C7   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_18:
+   \   0000CA   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000CD                ; Setup parameters for call to function Dela_200ms
+   \   0000CD   12....       LCALL   ?Subroutine5 & 0xFFFF
+   \                     ??CrossCallReturnLabel_7:
+   \   0000D0   40CA         JC      ??Twinkle_4
+     88              for(k=0;k<25;k++) {Sendcolor(k*10,255-k*10,255);Dela_200ms();}
+   \   0000D2   7E00         MOV     R6,#0x0
+   \   0000D4   7F00         MOV     R7,#0x0
+   \                     ??Twinkle_5:
+   \   0000D6   EE           MOV     A,R6
+   \   0000D7   FA           MOV     R2,A
+   \   0000D8   EF           MOV     A,R7
+   \   0000D9   FB           MOV     R3,A
+   \   0000DA   EA           MOV     A,R2
+   \   0000DB   75F00A       MOV     B,#0xa
+   \   0000DE   A4           MUL     AB
+   \   0000DF   FA           MOV     R2,A
+   \   0000E0   A8F0         MOV     R0,B
+   \   0000E2   75F00A       MOV     B,#0xa
+   \   0000E5   EB           MOV     A,R3
+   \   0000E6   A4           MUL     AB
+   \   0000E7   28           ADD     A,R0
+   \   0000E8   FB           MOV     R3,A
+   \   0000E9                ; Setup parameters for call to function Sendcolor
+   \   0000E9   75..FF       MOV     ?V0 + 2,#-0x1
+   \   0000EC   75..00       MOV     ?V0 + 3,#0x0
+   \   0000EF   78..         MOV     R0,#?V0 + 2
+   \   0000F1   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   0000F4   12....       LCALL   ?Subroutine6 & 0xFFFF
+   \                     ??CrossCallReturnLabel_16:
+   \   0000F7   12....       LCALL   ?DEALLOC_XSTACK8
+   \   0000FA                ; Setup parameters for call to function Dela_200ms
+   \   0000FA   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_1:
+   \   0000FD   40D7         JC      ??Twinkle_5
+     89              for(k=0;k<25;k++) {Sendcolor(255,k*10,255-k*10);Dela_200ms();}
+   \   0000FF   7E00         MOV     R6,#0x0
+   \   000101   7F00         MOV     R7,#0x0
+   \                     ??Twinkle_6:
+   \   000103   EE           MOV     A,R6
+   \   000104   FC           MOV     R4,A
+   \   000105   EF           MOV     A,R7
+   \   000106   FD           MOV     R5,A
+   \   000107   EC           MOV     A,R4
+   \   000108   75F00A       MOV     B,#0xa
+   \   00010B   A4           MUL     AB
+   \   00010C   FC           MOV     R4,A
+   \   00010D   A8F0         MOV     R0,B
+   \   00010F   75F00A       MOV     B,#0xa
+   \   000112   ED           MOV     A,R5
+   \   000113   A4           MUL     AB
+   \   000114   28           ADD     A,R0
+   \   000115   FD           MOV     R5,A
+   \   000116                ; Setup parameters for call to function Sendcolor
+   \   000116   74FF         MOV     A,#-0x1
+   \   000118   C3           CLR     C
+   \   000119   9C           SUBB    A,R4
+   \   00011A   F5..         MOV     ?V0 + 2,A
+   \   00011C   E4           CLR     A
+   \   00011D   9D           SUBB    A,R5
+   \   00011E   F5..         MOV     ?V0 + 3,A
+   \   000120   78..         MOV     R0,#?V0 + 2
+   \   000122   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000125   7AFF         MOV     R2,#-0x1
+   \   000127   7B00         MOV     R3,#0x0
+   \   000129   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_19:
+   \   00012C   12....       LCALL   ?DEALLOC_XSTACK8
+   \   00012F                ; Setup parameters for call to function Dela_200ms
+   \   00012F   12....       LCALL   ?Subroutine2 & 0xFFFF
+   \                     ??CrossCallReturnLabel_2:
+   \   000132   40CF         JC      ??Twinkle_6
+     90              for(k=0;k<25;k++) {Sendcolor(255-k*10,255,k*10);Dela_200ms();}
+   \   000134   7E00         MOV     R6,#0x0
+   \   000136   7F00         MOV     R7,#0x0
+   \                     ??Twinkle_7:
+   \   000138   8E..         MOV     ?V0 + 2,R6
+   \   00013A   8F..         MOV     ?V0 + 3,R7
+   \   00013C   E5..         MOV     A,?V0 + 2
+   \   00013E   75F00A       MOV     B,#0xa
+   \   000141   A4           MUL     AB
+   \   000142   F5..         MOV     ?V0 + 2,A
+   \   000144   A8F0         MOV     R0,B
+   \   000146   75F00A       MOV     B,#0xa
+   \   000149   E5..         MOV     A,?V0 + 3
+   \   00014B   A4           MUL     AB
+   \   00014C   28           ADD     A,R0
+   \   00014D   F5..         MOV     ?V0 + 3,A
+   \   00014F                ; Setup parameters for call to function Sendcolor
+   \   00014F   78..         MOV     R0,#?V0 + 2
+   \   000151   12....       LCALL   ?PUSH_XSTACK_I_TWO
+   \   000154   7CFF         MOV     R4,#-0x1
+   \   000156   7D00         MOV     R5,#0x0
+   \   000158   EC           MOV     A,R4
+   \   000159   C3           CLR     C
+   \   00015A   95..         SUBB    A,?V0 + 2
+   \   00015C   FA           MOV     R2,A
+   \   00015D   E4           CLR     A
+   \   00015E   95..         SUBB    A,?V0 + 3
+   \   000160   FB           MOV     R3,A
+   \   000161   12....       LCALL   ??Subroutine10_0 & 0xFFFF
+   \                     ??CrossCallReturnLabel_20:
+   \   000164   12....       LCALL   ?DEALLOC_XSTACK8
+   \   000167                ; Setup parameters for call to function Dela_200ms
+   \   000167   12....       LCALL   ?Subroutine2 & 0xFFFF
+     91              
+     92              }}
+   \                     ??CrossCallReturnLabel_3:
+   \   00016A   4003         JC      $+5
+   \   00016C   02....       LJMP    ??Twinkle_0 & 0xFFFF
+   \   00016F   80C7         SJMP    ??Twinkle_7
+   \                     ??Twinkle_1:
+   \   000171   02....       LJMP    ?Subroutine1 & 0xFFFF
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine6:
+   \   000000   74FF         MOV     A,#-0x1
+   \   000002   C3           CLR     C
+   \   000003   9A           SUBB    A,R2
+   \   000004   FC           MOV     R4,A
+   \   000005   E4           CLR     A
+   \   000006   9B           SUBB    A,R3
+   \   000007   FD           MOV     R5,A
+   \   000008                REQUIRE ??Subroutine10_0
+   \   000008                ; // Fall through to label ??Subroutine10_0
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ??Subroutine10_0:
+   \   000000   12....       LCALL   ??Sendcolor?relay
+   \   000003   7402         MOV     A,#0x2
+   \   000005   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine5:
+   \   000000   12....       LCALL   ??Dela_200ms?relay
+   \   000003   E5..         MOV     A,?V0 + 2
+   \   000005   2401         ADD     A,#0x1
+   \   000007   F5..         MOV     ?V0 + 2,A
+   \   000009   E5..         MOV     A,?V0 + 3
+   \   00000B   3400         ADDC    A,#0x0
+   \   00000D   F5..         MOV     ?V0 + 3,A
+   \   00000F   C3           CLR     C
+   \   000010   E5..         MOV     A,?V0 + 2
+   \   000012   9419         SUBB    A,#0x19
+   \   000014   E5..         MOV     A,?V0 + 3
+   \   000016   9400         SUBB    A,#0x0
+   \   000018   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00001A   65D0         XRL     A,PSW
+   \   00001C   33           RLC     A
+   \   00001D   22           RET
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+   \                     ?Subroutine2:
+   \   000000   12....       LCALL   ??Dela_200ms?relay
+   \   000003   12....       LCALL   ?Subroutine8 & 0xFFFF
+   \                     ??CrossCallReturnLabel_11:
+   \   000006   9419         SUBB    A,#0x19
+   \   000008   EF           MOV     A,R7
+   \   000009   9400         SUBB    A,#0x0
+   \   00000B   A2D2         MOV     C,0xD0 /* PSW */.2
+   \   00000D   65D0         XRL     A,PSW
+   \   00000F   33           RLC     A
+   \   000010   22           RET
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??IO_Init?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    IO_Init
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??delay?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    delay
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??T0?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    T0
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??T1?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    T1
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??REST?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    REST
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Sendcolor?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Sendcolor
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Dela_200ms?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Dela_200ms
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??Twinkle?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    Twinkle
+
+   \                                 In  segment XDATA_ROM_C, align 1
+   \                     `?<Constant {0}>`:
+   \   000000   0000         DW 0
+   \   000002   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00000A   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000012   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00001A   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   000022   00000000     DB 0, 0, 0, 0, 0, 0, 0, 0
+   \            00000000
+   \   00002A   00000000     DB 0, 0, 0, 0, 0, 0
+   \            0000    
+
+   Maximum stack usage in bytes:
+
+     Function        ISTACK PSTACK XSTACK
+     --------        ------ ------ ------
+     Dela_200ms          0      0     14
+     IO_Init             0      0     62
+     REST                2      0     62
+       -> delay          4      0      0
+     Sendcolor           2      0     78
+       -> IO_Init        0      0    124
+       -> T0             0      0    124
+       -> T1             0      0    124
+       -> REST           0      0    124
+     T0                  0      0     62
+     T1                  0      0     62
+     Twinkle             0      0     16
+       -> Sendcolor      0      0     32
+       -> Dela_200ms     0      0     28
+       -> Sendcolor      0      0     32
+       -> Dela_200ms     0      0     28
+       -> Sendcolor      0      0     32
+       -> Dela_200ms     0      0     28
+       -> Sendcolor      0      0     32
+       -> Dela_200ms     0      0     28
+       -> Sendcolor      0      0     32
+       -> Dela_200ms     0      0     28
+       -> Sendcolor      0      0     32
+       -> Dela_200ms     0      0     28
+     delay               0      0      0
+
+
+   Segment part sizes:
+
+     Function/Label     Bytes
+     --------------     -----
+     _A_P0                 1
+     P0INP                 1
+     P0DIR                 1
+     IO_Init               9
+     delay                 3
+     T0                    2
+     ?Subroutine0          7
+     T1                   13
+     REST                 16
+     Sendcolor           205
+     ?Subroutine1          5
+     ?Subroutine4         12
+     ?Subroutine7         24
+     ?Subroutine3          5
+     ??Subroutine9_0      23
+     ?Subroutine8         11
+     Dela_200ms            3
+     Twinkle             372
+     ?Subroutine6          8
+     ??Subroutine10_0      6
+     ?Subroutine5         30
+     ?Subroutine2         17
+     ??IO_Init?relay       6
+     ??delay?relay         6
+     ??T0?relay            6
+     ??T1?relay            6
+     ??REST?relay          6
+     ??Sendcolor?relay     6
+     ??Dela_200ms?relay    6
+     ??Twinkle?relay       6
+     ?<Constant {0}>      48
+
+ 
+ 771 bytes in segment BANKED_CODE
+  48 bytes in segment BANK_RELAYS
+   3 bytes in segment SFR_AN
+  48 bytes in segment XDATA_ROM_C
+ 
+ 819 bytes of CODE  memory
+  48 bytes of CONST memory
+   0 bytes of DATA  memory (+ 3 bytes shared)
+
+Errors: none
+Warnings: none
